@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import dictionary from '../assets/dictionary.json'
 import { Row } from '../Row';
 import type { RowValue } from '../Row';
@@ -9,10 +9,14 @@ type Matrix = [RowValue, RowValue, RowValue, RowValue, RowValue];
 const dictionarySet = new Set(dictionary);
 const rows = [0, 1, 2, 3, 4];
 const emptyRow: RowValue = ['', '', '', '' , ''];
+const defaultMatrix: Matrix = [emptyRow, emptyRow, emptyRow, emptyRow, emptyRow];
+
+const generateMasterWord = () => dictionary[Math.ceil(Math.random() * dictionary.length)];
 
 export const App = () => {
+  const masterWord = useRef(generateMasterWord());
   const [activeRow, setActiveRow] = useState(0)
-  const [matrix, setMatrix] = useState<Matrix>([emptyRow, emptyRow, emptyRow, emptyRow, emptyRow]);
+  const [matrix, setMatrix] = useState<Matrix>(defaultMatrix);
 
   const handleChange = useCallback((row: number, nextValue: RowValue) => {
     setMatrix((currentState) => {
@@ -28,7 +32,14 @@ export const App = () => {
     const isValidWord = dictionarySet.has(word);
 
     if (isValidWord) {
-        setActiveRow(activeRow + 1);
+        if (masterWord.current === word) {
+            alert('Ура!');
+            masterWord.current = generateMasterWord();
+            setActiveRow(0);
+            setMatrix(defaultMatrix);
+        } else {
+            setActiveRow(activeRow + 1);
+        }
     } else {
         console.error(`Слово ${word} не найдено в словаре.`)
     }

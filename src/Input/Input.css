@@ -15,6 +15,10 @@
     border: 1px solid gray;
 }
 
+.input--error:not(.input--disabled) {
+    border: 1px solid red;
+}
+
 .input:focus {
     border-color: blueviolet;
 }

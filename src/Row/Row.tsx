@@ -5,14 +5,17 @@ import { Input } from '../Input';
 export type RowValue = [string, string, string, string, string];
 
 interface RowProps {
+    isError: boolean;
     index: number;
     active: boolean;
     value: RowValue;
     onChange: (row: number, nextValue: RowValue) => void;
 }
 
+const cells = [0, 1, 2, 3, 4];
+
 export const Row = (props: RowProps) => {
-    const { index, active, value, onChange } = props;
+    const { isError, index, active, value, onChange } = props;
 
     const handleKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
         const { key, currentTarget } = e;
@@ -42,11 +45,16 @@ export const Row = (props: RowProps) => {
 
     return (
         <>
-            <Input disabled={!active} data-index={0} onKeyDown={handleKeyDown} value={value[0]} />
-            <Input disabled={!active} data-index={1} onKeyDown={handleKeyDown} value={value[1]} />
-            <Input disabled={!active} data-index={2} onKeyDown={handleKeyDown} value={value[2]} />
-            <Input disabled={!active} data-index={3} onKeyDown={handleKeyDown} value={value[3]} />
-            <Input disabled={!active} data-index={4} onKeyDown={handleKeyDown} value={value[4]} />
+            {cells.map((index) => (
+                <Input
+                    key={index}
+                    disabled={!active}
+                    isError={isError}
+                    data-index={index}
+                    onKeyDown={handleKeyDown}
+                    value={value[index]}
+                />
+            ))}
         </>
     );
 }

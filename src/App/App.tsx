@@ -15,6 +15,7 @@ const generateMasterWord = () => dictionary[Math.ceil(Math.random() * dictionary
 
 export const App = () => {
   const masterWord = useRef(generateMasterWord());
+  const [isError, setIsError] = useState(false)
   const [activeRow, setActiveRow] = useState(0)
   const [matrix, setMatrix] = useState<Matrix>(defaultMatrix);
 
@@ -24,7 +25,8 @@ export const App = () => {
         nextState[row] = nextValue;
 
         return nextState;
-    })
+    });
+    setIsError(false);
   }, []);
 
   const handleTest = useCallback(() => {
@@ -41,6 +43,7 @@ export const App = () => {
             setActiveRow(activeRow + 1);
         }
     } else {
+        setIsError(true);
         console.error(`Слово ${word} не найдено в словаре.`)
     }
   }, [activeRow, matrix]);
@@ -49,7 +52,14 @@ export const App = () => {
     <div className="app">
         <div className="board">
             {rows.map((val) => (
-                <Row key={val} active={activeRow === val} index={val} value={matrix[val]} onChange={handleChange} />
+                <Row
+                    key={val}
+                    active={activeRow === val}
+                    index={val}
+                    isError={isError}
+                    value={matrix[val]}
+                    onChange={handleChange}
+                />
             ))}
         </div>
 

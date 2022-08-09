@@ -1,2 +1,2 @@
 export { Row } from './Row';
-export type { RowValue } from './Row';
+export type { RowValue, RowResult } from './types';

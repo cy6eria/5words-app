@@ -19,6 +19,16 @@
     border: 1px solid red;
 }
 
+.input--present {
+    background: white;
+    color: black;
+}
+
+.input--on-place {
+    background: yellow;
+    color: black;
+}
+
 .input:focus {
     border-color: blueviolet;
 }

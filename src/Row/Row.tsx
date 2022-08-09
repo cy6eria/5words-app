@@ -1,21 +1,21 @@
 import { useCallback, useState } from 'react';
 import type { KeyboardEvent } from 'react';
 import { Input } from '../Input';
-
-export type RowValue = [string, string, string, string, string];
+import { RowValue, RowResult } from './types';
 
 interface RowProps {
     isError: boolean;
     index: number;
     active: boolean;
     value: RowValue;
+    state: RowResult;
     onChange: (row: number, nextValue: RowValue) => void;
 }
 
 const cells = [0, 1, 2, 3, 4];
 
 export const Row = (props: RowProps) => {
-    const { isError, index, active, value, onChange } = props;
+    const { isError, index, active, value, state, onChange } = props;
 
     const handleKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
         const { key, currentTarget } = e;
@@ -53,6 +53,7 @@ export const Row = (props: RowProps) => {
                     data-index={index}
                     onKeyDown={handleKeyDown}
                     value={value[index]}
+                    state={state[index]}
                 />
             ))}
         </>

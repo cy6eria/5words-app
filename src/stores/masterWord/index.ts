@@ -1,0 +1,1 @@
+export { $masterWord } from "./masterWord";

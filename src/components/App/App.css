@@ -4,7 +4,7 @@
 }
 
 .content {
-    padding: 2rem 2rem;
+    padding: 1rem 0.5rem;
     display: flex;
     place-items: center;
     flex-direction: column;
@@ -13,8 +13,8 @@
 .board {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.5rem;
 }
 
 .actions {

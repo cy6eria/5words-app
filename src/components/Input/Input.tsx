@@ -73,6 +73,8 @@ export const Input = (props: InputProps) => {
                 'input--on-place': isOnPlace,
             })}
             tabIndex={!isActiveRow || isGameComplete ? undefined : 0}
+            data-row-index={rowIndex}
+            data-col-index={colIndex}
             onKeyDown={handleKeyDown}
         >
             {letter}

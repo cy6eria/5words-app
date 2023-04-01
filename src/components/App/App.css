@@ -1,4 +1,10 @@
 .app {
+    min-height: 100vh;
+    background-color: var(--main);
+}
+
+.content {
+    padding: 2rem 2rem;
     display: flex;
     place-items: center;
     flex-direction: column;
@@ -15,8 +21,4 @@
     margin-top: 30px;
     display: flex;
     gap: 1rem;
-}
-
-button:focus {
-    background-color: yellow;
 }

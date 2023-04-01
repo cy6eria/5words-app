@@ -1,0 +1,26 @@
+.topbar {
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    background-color: var(--secondary);
+    display: flex;
+    padding: 0.5rem 2rem;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.25rem;
+}
+
+.logo > div {
+    border: 1px solid var(--default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    font-size: 2rem;
+}

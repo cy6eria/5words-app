@@ -1,34 +1,36 @@
 .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
-    width: 60px;
-    height: 60px;
+    width: 4rem;
+    height: 4rem;
     font-size: 3rem;
     text-transform: capitalize;
-    border: 1px solid white;
+    border: 1px solid var(--text);
     border-radius: .25rem;
     outline: none;
     text-align: center;
-    line-height: 58px;
 }
 
 .input--disabled {
-    border: 1px solid gray;
+    border: 1px solid var(--default);;
 }
 
 .input--error:not(.input--disabled) {
-    border: 1px solid red;
+    border: 1px solid var(--danger);
 }
 
 .input--present {
-    background: white;
-    color: black;
+    background: var(--warning);
+    border-color: var(--warning);
 }
 
 .input--on-place {
-    background: yellow;
-    color: black;
+    background: var(--success);
+    border-color: var(--success);
 }
 
 .input:focus {
-    border-color: blueviolet;
+    border-color: var(--warning);
 }

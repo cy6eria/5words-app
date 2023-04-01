@@ -6,24 +6,26 @@
 
 .keyboard__sym {
     text-align: center;
+    text-transform: uppercase;
     width: 25px;
     margin: 0 8px;
     padding: 4px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--default);
     border-radius: 4px;
     background: none;
-    color: white;
+    color: var(--text);
 }
 
 .keyboard__sym--used {
-    background-color: gray;
+    background-color: var(--default);
 }
 
 .keyboard__sym--in-word {
-    background-color: white;
-    color: black;
+    background-color: var(--warning);
+    border-color: var(--warning);
 }
 
 .keyboard__sym--on-place {
-    background-color: yellow;
+    background-color: var(--success);
+    border-color: var(--success);
 }

@@ -9,12 +9,17 @@
     text-transform: uppercase;
     width: 1.5rem;
     height: 2.5rem;
-    margin: 0 0.25rem;
+    margin: 0 0.2rem;
     padding: 0.15rem;
     border: 1px solid var(--default);
     border-radius: 0.25rem;
     background: none;
     color: var(--text);
+}
+
+.keyboard__sym--special {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
 }
 
 .keyboard__sym--used {
@@ -29,4 +34,10 @@
 .keyboard__sym--on-place {
     background-color: var(--success);
     border-color: var(--success);
+}
+
+@media (prefers-color-scheme: light) {
+    .keyboard__sym--used, .keyboard__sym--in-word, .keyboard__sym--on-place {
+        color: var(--textContrast);
+    }
 }

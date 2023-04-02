@@ -34,3 +34,9 @@
 .input:focus {
     border-color: var(--warning);
 }
+
+@media (prefers-color-scheme: light) {
+    .input--present, .input--on-place {
+        color: var(--textContrast);
+    }
+}

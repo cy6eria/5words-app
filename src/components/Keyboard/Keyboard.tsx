@@ -6,11 +6,13 @@ import { $letters } from '../../stores';
 import { setLetter, submit } from '../../events';
 import './Keyboard.css';
 
-const rows = [
+const ROWS = [
     ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ'],
     ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],
     ['←', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', 'ё', '↵'],
-]
+];
+
+const SPECIAL_SYMBOLS = ['←', '↵'];
 
 export const Keyboard = () => {
     const { used, present, found } = useStore($letters);
@@ -54,7 +56,7 @@ export const Keyboard = () => {
 
     return (
         <>
-            {rows.map((row, index) => (
+            {ROWS.map((row, index) => (
                 <div key={index} className="keyboard__row">
                     {row.map((sym) => (
                         <button
@@ -63,6 +65,7 @@ export const Keyboard = () => {
                                 ['keyboard__sym--used']: used.has(sym),
                                 ['keyboard__sym--in-word']: present.has(sym),
                                 ['keyboard__sym--on-place']: found.has(sym),
+                                ['keyboard__sym--special']: SPECIAL_SYMBOLS.includes(sym),
                             })}
                             onMouseDown={handleKeyClick}
                             data-letter={sym}

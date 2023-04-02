@@ -1,0 +1,22 @@
+.word {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.25rem;
+}
+
+.word > div {
+    border: 1px solid var(--default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+}
+
+.word--right > div {
+    border: 1px solid var(--success);
+    background: var(--success);
+}

@@ -1,6 +1,5 @@
 import { Topbar } from '../Topbar';
 import { Row } from '../Row';
-import { Actions } from '../Actions';
 import { Keyboard } from '../Keyboard';
 import { ResultDialog } from '../ResultDialog';
 import { ROWS } from '../../constants';
@@ -14,8 +13,6 @@ export const App = () => {
             <div className="app">
                 <Topbar />
 
-                <ResultDialog />
-
                 <div className="content">
                     <div className="board">
                         {rows.map((rowIndex) => (
@@ -26,13 +23,13 @@ export const App = () => {
                         ))}
                     </div>
 
-                    <Actions className="actions" />
-
                     <div>
                         <Keyboard />
                     </div>
                 </div>
             </div>
+
+            <ResultDialog />
         </>
     )
 }

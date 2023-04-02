@@ -1,3 +1,7 @@
+.keyboard {
+    padding: 0.5rem 0;
+}
+
 .keyboard__row {
     display: flex;
     justify-content: center;
@@ -7,9 +11,10 @@
 .keyboard__sym {
     text-align: center;
     text-transform: uppercase;
-    width: 1.5rem;
+    font-size: 1.20rem;
+    width: 1.65rem;
     height: 2.5rem;
-    margin: 0 0.2rem;
+    margin: 0 0.1rem;
     padding: 0.15rem;
     border: 1px solid var(--default);
     border-radius: 0.25rem;

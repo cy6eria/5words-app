@@ -1,3 +1,23 @@
-.dialog {
+.result {
+    text-align: center;
+    padding: 2rem 4rem;
+}
 
+.result__word {
+    display: inline-grid;
+}
+
+.result__title {
+    font-size: 4rem;
+    margin: 3rem 0;
+}
+
+.result__message {
+    margin: 3rem 0;
+}
+
+@media screen and (max-width: 639px)  {
+    .result {
+        padding: 2rem;
+    }
 }

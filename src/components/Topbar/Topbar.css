@@ -4,23 +4,20 @@
     top: 0;
     background-color: var(--secondary);
     display: flex;
+    justify-content: space-between;
     padding: 0.5rem;
 }
 
-.logo {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.25rem;
+.rules-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text);
+    display: none;
 }
 
-.logo > div {
-    border: 1px solid var(--default);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
+.rules-button svg {
     width: 2rem;
     height: 2rem;
-    border-radius: 0.25rem;
-    font-size: 1.5rem;
 }

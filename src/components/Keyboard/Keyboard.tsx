@@ -55,7 +55,7 @@ export const Keyboard = () => {
     }, []);
 
     return (
-        <>
+        <div className="keyboard">
             {ROWS.map((row, index) => (
                 <div key={index} className="keyboard__row">
                     {row.map((sym) => (
@@ -75,6 +75,6 @@ export const Keyboard = () => {
                     ))}
                 </div>
             ))}
-        </>
+        </div>
     );
 }

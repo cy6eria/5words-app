@@ -20,6 +20,7 @@
     border-radius: 0.25rem;
     background: none;
     color: var(--text);
+    cursor: pointer;
 }
 
 .keyboard__sym--special {

@@ -35,6 +35,10 @@
     border-color: var(--warning);
 }
 
+.input--active {
+    cursor: pointer;
+}
+
 @media (prefers-color-scheme: light) {
     .input--present, .input--on-place {
         color: var(--textContrast);

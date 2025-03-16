@@ -65,12 +65,14 @@ export const Input = (props: InputProps) => {
 
     return (
         <div
+            aria-role="input"
             ref={element}
             className={cx('input', {
                 'input--disabled': !isActiveRow || isGameComplete,
                 'input--error': error && isActiveRow,
                 'input--present': isPresent,
                 'input--on-place': isOnPlace,
+                'input--active': isActiveRow,
             })}
             tabIndex={!isActiveRow || isGameComplete ? undefined : 0}
             data-row-index={rowIndex}

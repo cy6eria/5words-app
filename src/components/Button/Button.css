@@ -5,4 +5,10 @@
     border: none;
     font-size: 2rem;
     padding: 1rem;
+    cursor: pointer;
+}
+
+.button--small {
+    font-size: 1rem;
+    padding: 0.5rem;
 }

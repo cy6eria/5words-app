@@ -2,12 +2,16 @@ import { ButtonHTMLAttributes } from 'react';
 import cx from 'classnames';
 import './Button.css';
 
-export const Button = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
-    const { className, children, type, ...otherProps } = props;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    size?: 'small' | 'normal';
+}
+
+export const Button = (props: ButtonProps) => {
+    const { className, children, type, size = 'normal', ...otherProps } = props;
 
     return (
         <button
-            className={cx('button', className)}
+            className={cx('button', { 'button--small': size === 'small' }, className)}
             type={type ?? 'button'}
             {...otherProps}
         >
